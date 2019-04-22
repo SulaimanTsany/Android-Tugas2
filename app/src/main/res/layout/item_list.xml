@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,8 +10,8 @@
     <ImageView
         android:id="@+id/iv_item_photo"
         android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/ic_launcher_background"/>
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_launcher_background"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -22,27 +23,35 @@
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
             android:textSize="16sp"
             android:textColor="@color/colorBlack"
             android:textStyle="bold"
-            android:text="name"/>
+            android:text="Movie Title"/>
+
         <TextView
-            android:id="@+id/tv_item_star"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/colorBlack"
-            android:textStyle="bold"
-            android:text="star"/>
-        <TextView
-            android:id="@+id/tv_item_desc"
+            android:id="@+id/tv_item_release_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:maxLines="1"
             android:textColor="@color/colorGray"
-            android:text="description"/>
+            android:text="May 3, 2019"/>
+        <TextView
+            android:id="@+id/tv_item_star"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="star"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_item_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:textColor="@color/colorGray"
+            android:text="The story of the tortuous struggle against the silence of the victims of the dictatorship imposed by General Franco after the victory of the rebel side in the Spanish Civil War (1936-1975). In a democratic country…"/>
 
     </LinearLayout>
 

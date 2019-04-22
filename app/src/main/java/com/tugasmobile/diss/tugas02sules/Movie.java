@@ -7,7 +7,10 @@ public class Movie implements Parcelable {
     private String name;
     private String description;
     private String photo;
-    private float star;
+    private String release_date;
+    private String image_backdrop;
+    private float vote_average;
+    private int vote_count;
 
     public Movie () {}
     public Movie (Parcel in) {
@@ -16,13 +19,6 @@ public class Movie implements Parcelable {
         this.photo = in.readString();
     }
 
-    public float getStar() {
-        return star;
-    }
-
-    public void setStar(float star) {
-        this.star = star;
-    }
 
     public String getName() {
         return name;
@@ -70,4 +66,36 @@ public class Movie implements Parcelable {
             return new Movie[size];
         }
     };
+
+    public float getVote_average() {
+        return vote_average;
+    }
+
+    public void setVote_average(float vote_average) {
+        this.vote_average = vote_average;
+    }
+
+    public int getVote_count() {
+        return vote_count;
+    }
+
+    public void setVote_count(int vote_count) {
+        this.vote_count = vote_count;
+    }
+
+    public String getImage_backdrop() {
+        return image_backdrop;
+    }
+
+    public void setImage_backdrop(String image_backdrop) {
+        this.image_backdrop = image_backdrop;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
+    }
 }
