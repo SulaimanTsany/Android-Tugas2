@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tugas02Sules</string>
+    <string name="app_name" translatable="false">Tugas02Sules</string>
     <string name="home">home</string>
     <string name="favorite">favorite</string>
     <string name="other">other</string>

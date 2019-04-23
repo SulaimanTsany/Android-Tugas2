@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tugas02Sules</string>
+    <string name="home">home</string>
+    <string name="favorite">favorit</string>
+    <string name="other">lainnya</string>
+    <string name="title_activity_bottom_navagation">The Sule</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Pemberitahuan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorit</string>
+    <string name="menu_other">Lainnya</string>
+    <string name="notification">Pemberitahuan</string>
+    <string name="credit">Credit</string>
+    <string name="change_language">Ganti Bahasa</string>
+</resources>

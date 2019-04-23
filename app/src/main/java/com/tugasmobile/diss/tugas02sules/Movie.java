@@ -4,68 +4,50 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Movie implements Parcelable {
-    private String name;
-    private String description;
-    private String photo;
+    private String title;
+    private String overview;
+    private String poster_path;
     private String release_date;
-    private String image_backdrop;
+    private String backdrop_path;
     private float vote_average;
     private int vote_count;
 
     public Movie () {}
     public Movie (Parcel in) {
-        this.name = in.readString();
-        this.description = in.readString();
-        this.photo = in.readString();
+        this.title = in.readString();
+        this.overview = in.readString();
+        this.poster_path = in.readString();
+        this.release_date = in.readString();
+        this.backdrop_path = in.readString();
+        this.vote_average = in.readFloat();
+        this.vote_count = in.readInt();
     }
 
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getPoster_path() {
+        return poster_path;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.name);
-        dest.writeString(this.description);
-        dest.writeString(this.photo);
-    }
-    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
-        @Override
-        public Movie createFromParcel(Parcel source) {
-            return new Movie(source);
-        }
-
-        @Override
-        public Movie[] newArray(int size) {
-            return new Movie[size];
-        }
-    };
 
     public float getVote_average() {
         return vote_average;
@@ -83,12 +65,12 @@ public class Movie implements Parcelable {
         this.vote_count = vote_count;
     }
 
-    public String getImage_backdrop() {
-        return image_backdrop;
+    public String getBackdrop_path() {
+        return backdrop_path;
     }
 
-    public void setImage_backdrop(String image_backdrop) {
-        this.image_backdrop = image_backdrop;
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
     }
 
     public String getRelease_date() {
@@ -98,4 +80,31 @@ public class Movie implements Parcelable {
     public void setRelease_date(String release_date) {
         this.release_date = release_date;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.title);
+        dest.writeString(this.overview);
+        dest.writeString(this.poster_path);
+        dest.writeString(this.release_date);
+        dest.writeString(this.backdrop_path);
+        dest.writeFloat(this.vote_average);
+        dest.writeInt(this.vote_count);
+    }
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel source) {
+            return new Movie(source);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

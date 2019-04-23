@@ -53,13 +53,13 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ListMovieAdapter.ViewHolder viewHolder, final int i) {
-        viewHolder.tvName.setText(getListMovie().get(i).getName());
-        viewHolder.tvDescription.setText(getListMovie().get(i).getDescription());
+        viewHolder.tvName.setText(getListMovie().get(i).getTitle());
+        viewHolder.tvDescription.setText(getListMovie().get(i).getOverview());
         viewHolder.tvVote.setText(String.valueOf(getListMovie().get(i).getVote_average()));
         viewHolder.tvRelease.setText(getListMovie().get(i).getRelease_date());
         Glide.with(context)
-                .load(Integer.valueOf(getListMovie().get(i).getPhoto()))
-                .apply(new RequestOptions().override(70,100))
+                .load(Integer.valueOf(getListMovie().get(i).getPoster_path()))
+                .apply(new RequestOptions().override(100,130))
                 .into(viewHolder.ivPhoto);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), DetailMovieActivity.class);
                 intent.putExtra("MOVIE", getListMovie().get(i));
-                Log.e("Title", getListMovie().get(i).getName());
+                Log.e("Title", getListMovie().get(i).getTitle());
                 getContext().startActivity(intent);
             }
         });

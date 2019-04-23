@@ -28,14 +28,14 @@ public class DetailMovieActivity extends AppCompatActivity {
         tvRelease = findViewById(R.id.detail_release_date);
         ivImage = findViewById(R.id.detail_image);
 
-        movie = getIntent().getParcelableExtra("MOVIE");
-        tvTitle.setText(movie.getName());
-        tvDescription.setText(movie.getDescription());
+        movie = getIntent().getExtras().getParcelable("MOVIE");
+        tvTitle.setText(movie.getTitle());
+        tvDescription.setText(movie.getOverview());
         tvVote.setText(String.valueOf(movie.getVote_average()));
         tvRelease.setText(movie.getRelease_date());
         Glide.with(this)
-                .load(Integer.valueOf(movie.getPhoto()))
-                .apply(new RequestOptions().override(70,100))
+                .load(Integer.valueOf(movie.getPoster_path()))
+                .apply(new RequestOptions().override(210,300))
                 .into(ivImage);
     }
 }

@@ -20,9 +20,9 @@ public class MovieData {
         ArrayList<Movie> list = new ArrayList<>();
         for (String[] aData : data) {
             Movie movie = new Movie();
-            movie.setName(aData[0]);
-            movie.setDescription(aData[1]);
-            movie.setPhoto(aData[2]);
+            movie.setTitle(aData[0]);
+            movie.setOverview(aData[1]);
+            movie.setPoster_path(aData[2]);
             movie.setRelease_date(aData[3]);
             movie.setVote_average(Float.valueOf(aData[4]));
             list.add(movie);
