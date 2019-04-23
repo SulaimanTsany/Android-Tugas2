@@ -12,7 +12,8 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".DetailMovieActivity" />
+        <activity android:name=".DetailMovieActivity"
+            android:theme="@style/AppTheme.NoActionBarSule"/>
         <activity
             android:name=".BottomNavagationActivity"
             android:label="@string/title_activity_bottom_navagation">

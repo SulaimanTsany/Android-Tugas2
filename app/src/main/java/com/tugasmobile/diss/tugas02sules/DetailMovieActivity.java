@@ -34,8 +34,8 @@ public class DetailMovieActivity extends AppCompatActivity {
         tvVote.setText(String.valueOf(movie.getVote_average()));
         tvRelease.setText(movie.getRelease_date());
         Glide.with(this)
-                .load(Integer.valueOf(movie.getPoster_path()))
-                .apply(new RequestOptions().override(210,300))
+                .load(Integer.valueOf(movie.getBackdrop_path()))
+                .apply(new RequestOptions().override(1200, 840).optionalCenterCrop())
                 .into(ivImage);
     }
 }

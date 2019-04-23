@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class MovieData {
     public static String[][] data = new String[][]{
-            {"How to Train Your Dragon", "As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested", String.valueOf(R.drawable.howtotrainyourdragon), "September 28, 2018", "7.3"},
-            {"The Lego", "There's a bad mood rising against the corporate brands. No Logo is the warning on the label. In the last decade, No Logo has become a cultural manifesto for the critics of unfettered capitalism worldwide.", String.valueOf(R.drawable.lego), "November 18, 2018", "8.3"},
-            {"Ocean 8", "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century at New York's annual Met Gala.", String.valueOf(R.drawable.ocean8), "January 21, 2019", "6.3"},
-            {"Venom", "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protec", String.valueOf(R.drawable.venom), "Mei 28, 2019", "7.6"},
-            {"Hellboy", "Hellboy comes to England, where he must defeat Nimue, Merlin's consort and the Blood Queen. But their battle will bring about the end of the world, a fate he desperately tries to turn away.", String.valueOf(R.drawable.hellboy), "April 12, 2019", "7.0"},
-            {"Shazam!", "A boy is given the ability to become an adult superhero in times of need with a single magic word.", String.valueOf(R.drawable.shazam), "March 23, 2019", "7.2"},
-            {"Avengers: Endgame", "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo", String.valueOf(R.drawable.endgames), "April 26, 2019", "6.9"},
-            {"Captain Marvel", "The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all", String.valueOf(R.drawable.captainmarvel), "March 8, 2019", "8.8"},
-            {"Bumblebee", "On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred", String.valueOf(R.drawable.bumblebee), "December 28, 2019", "9.1"},
+            {"How to Train Your Dragon", "As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested", String.valueOf(R.drawable.howtotrainyourdragon), "September 28, 2018", "7.3", String.valueOf(R.drawable.backdrop_howtotrain)},
+            {"The Lego", "There's a bad mood rising against the corporate brands. No Logo is the warning on the label. In the last decade, No Logo has become a cultural manifesto for the critics of unfettered capitalism worldwide.", String.valueOf(R.drawable.lego), "November 18, 2018", "8.3", String.valueOf(R.drawable.backdrop_lego)},
+            {"Ocean 8", "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century at New York's annual Met Gala.", String.valueOf(R.drawable.ocean8), "January 21, 2019", "6.3", String.valueOf(R.drawable.backdrop_ocaen)},
+            {"Venom", "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protec", String.valueOf(R.drawable.venom), "Mei 28, 2019", "7.6", String.valueOf(R.drawable.backdrop_venom)},
+            {"Hellboy", "Hellboy comes to England, where he must defeat Nimue, Merlin's consort and the Blood Queen. But their battle will bring about the end of the world, a fate he desperately tries to turn away.", String.valueOf(R.drawable.hellboy), "April 12, 2019", "7.0", String.valueOf(R.drawable.backdrop_hellboy)},
+            {"Shazam!", "A boy is given the ability to become an adult superhero in times of need with a single magic word.", String.valueOf(R.drawable.shazam), "March 23, 2019", "7.2", String.valueOf(R.drawable.backdrop_shazam)},
+            {"Avengers: Endgame", "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo", String.valueOf(R.drawable.endgames), "April 26, 2019", "6.9", String.valueOf(R.drawable.backdrop_endgame)},
+            {"Captain Marvel", "The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all", String.valueOf(R.drawable.captainmarvel), "March 8, 2019", "8.8", String.valueOf(R.drawable.backdrop_captain)},
+            {"Bumblebee", "On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred", String.valueOf(R.drawable.bumblebee), "December 28, 2019", "9.1", String.valueOf(R.drawable.backdrop_bumblebee)},
     };
 
 
@@ -25,6 +25,7 @@ public class MovieData {
             movie.setPoster_path(aData[2]);
             movie.setRelease_date(aData[3]);
             movie.setVote_average(Float.valueOf(aData[4]));
+            movie.setBackdrop_path(aData[5]);
             list.add(movie);
         }
         return list;
