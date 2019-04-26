@@ -3,17 +3,43 @@ package com.tugasmobile.diss.tugas02sules;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Movie implements Parcelable {
+
+    private String id;
     private String title;
     private String overview;
     private String poster_path;
     private String release_date;
     private String backdrop_path;
+    private String poster;
+    private String backdrop;
     private float vote_average;
     private int vote_count;
 
     public Movie () {}
+
+    public Movie(JSONObject object){
+        try {
+            this.id = object.getString("id");
+            this.title = object.getString("title");
+            this.overview = object.getString("overview");
+            this.poster_path = object.getString("poster_path");
+            this.release_date = object.getString("release_date");
+            this.backdrop_path = object.getString("backdrop_path");
+            this.vote_average = Float.valueOf(object.getString("vote_average"));
+            this.vote_count = object.getInt("vote_count");
+            removeSlashImage();
+            release_date = (new DateParser(release_date)).dateHumanist();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     public Movie (Parcel in) {
+        this.id = in.readString();
         this.title = in.readString();
         this.overview = in.readString();
         this.poster_path = in.readString();
@@ -88,6 +114,7 @@ public class Movie implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
         dest.writeString(this.title);
         dest.writeString(this.overview);
         dest.writeString(this.poster_path);
@@ -107,4 +134,38 @@ public class Movie implements Parcelable {
             return new Movie[size];
         }
     };
+
+    public void removeSlashImage() {
+        if (poster_path != null) {
+            String[] arr = poster_path.split("/");
+            poster_path = "https://image.tmdb.org/t/p/w154/" +arr[1];
+        }
+        if (backdrop_path != null) {
+            backdrop_path = "https://image.tmdb.org/t/p/w500" + backdrop_path;
+        }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public String getBackdrop() {
+        return backdrop;
+    }
+
+    public void setBackdrop(String backdrop) {
+        this.backdrop = backdrop;
+    }
 }

@@ -10,6 +10,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        //API KEY
+        buildConfigField("String", "API_KEY", '"a229c8c44a8b70719462114d0a97fe96"')
+        //BASE URL
+        buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org/3"')
     }
     buildTypes {
         release {

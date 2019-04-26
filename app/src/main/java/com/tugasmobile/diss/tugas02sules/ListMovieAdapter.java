@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -57,8 +58,9 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
         viewHolder.tvDescription.setText(getListMovie().get(i).getOverview());
         viewHolder.tvVote.setText(String.valueOf(getListMovie().get(i).getVote_average()));
         viewHolder.tvRelease.setText(getListMovie().get(i).getRelease_date());
+        viewHolder.rbStar.setRating(getListMovie().get(i).getVote_average()/2);
         Glide.with(context)
-                .load(Integer.valueOf(getListMovie().get(i).getPoster_path()))
+                .load(getListMovie().get(i).getPoster_path())
                 .apply(new RequestOptions().override(100,130))
                 .into(viewHolder.ivPhoto);
 
@@ -84,6 +86,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
         TextView tvVote;
         TextView tvRelease;
         ImageView ivPhoto;
+        RatingBar rbStar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -92,6 +95,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
             tvVote = itemView.findViewById(R.id.tv_item_star);
             tvRelease = itemView.findViewById(R.id.tv_item_release_date);
             ivPhoto = itemView.findViewById(R.id.iv_item_photo);
+            rbStar = itemView.findViewById(R.id.rb_item_star);
         }
     }
 }
