@@ -30,11 +30,30 @@ public class Api {
         return url;
     }
 
-    public static URL getPoster(String poster_path, String size){
-        // https://image.thdb.org/t/p/{poster_size}/{porter_path}
-        Uri uri = Uri.parse("https://image.tmdb.org/t/p").buildUpon()
-                .appendPath(size)
-                .appendPath(poster_path)
+    public static URL getUpcomingMovie(int page){
+        // https://api.themoviedb.org/3/movie/upcoming?api_key=a229
+        Uri uri = Uri.parse("https://api.themoviedb.org/3").buildUpon()
+                .appendPath("movie")
+                .appendPath("upcoming")
+                .appendQueryParameter("page", String.valueOf(page))
+                .appendQueryParameter(KEY, API_KEY)
+                .build();
+        URL url = null;
+        try{
+            url = new URL(uri.toString());
+        } catch (MalformedURLException e){
+            e.printStackTrace();
+        }
+        return url;
+    }
+
+    public static URL getPopularMovie(int page){
+        // https://api.themoviedb.org/3/movie/popular?api_key=a229
+        Uri uri = Uri.parse("https://api.themoviedb.org/3").buildUpon()
+                .appendPath("movie")
+                .appendPath("popular")
+                .appendQueryParameter("page", String.valueOf(page))
+                .appendQueryParameter(KEY, API_KEY)
                 .build();
         URL url = null;
         try{

@@ -51,10 +51,18 @@ public class BottomNavagationActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     loadFragment(fragment);
                     return true;
-                case R.id.menu_favorite:
-                    fragment = new FavoriteFragment();
+                case R.id.menu_popular:
+                    fragment = new PopularFragment();
                     loadFragment(fragment);
                     return true;
+                case R.id.menu_upcoming:
+                    fragment = new UpcomingFragment();
+                    loadFragment(fragment);
+                    return true;
+//                case R.id.menu_favorite:
+//                    fragment = new FavoriteFragment();
+//                    loadFragment(fragment);
+//                    return true;
                 case R.id.menu_other:
                     fragment = new OtherFragment();
                     loadFragment(fragment);

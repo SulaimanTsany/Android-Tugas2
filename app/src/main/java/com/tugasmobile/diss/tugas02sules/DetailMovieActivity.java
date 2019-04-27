@@ -2,6 +2,7 @@ package com.tugasmobile.diss.tugas02sules;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -41,5 +42,16 @@ public class DetailMovieActivity extends AppCompatActivity {
                 .load(movie.getBackdrop_path())
                 .apply(new RequestOptions().override(1200, 840).optionalCenterCrop())
                 .into(ivImage);
+    }
+
+    public void favoriteButton(View view) {
+
+    }
+
+    void setFavorite() {
+
+    }
+    void setUnfavorite() {
+
     }
 }
