@@ -42,6 +42,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
     }
 
     public void setListMovie(ArrayList<Movie> listMovie) {
+//        notifyDataSetChanged();
         this.listMovie = listMovie;
     }
 
@@ -77,7 +78,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
 
     @Override
     public int getItemCount() {
-        return MovieData.getListData().size();
+        return getListMovie().size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

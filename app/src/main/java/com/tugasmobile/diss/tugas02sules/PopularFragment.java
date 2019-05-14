@@ -25,20 +25,21 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class PopularFragment extends Fragment {
     private RecyclerView rv_main;
     private ProgressBar pb_main;
     private ArrayList<Movie> listMovies = new ArrayList<>();
 
-    public HomeFragment() {
+    public PopularFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for getActivity() fragment
-        getActivity().setTitle("Now Playing");
+        // Inflate the layout for this fragment
+        getActivity().setTitle("Popular Movie");
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //listMovies.addAll(MovieData.getListData());
         rv_main = view.findViewById(R.id.rv_main);
@@ -60,9 +61,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadData() {
-        URL url = Api.getListMovie();
+        URL url = Api.getPopularMovie(1);
         Log.e("url", url.toString());
-        new MovieAsyncTask().execute(url);
+        new PopularFragment.MovieAsyncTask().execute(url);
     }
 
     protected class MovieAsyncTask extends AsyncTask<URL, Void, String> {
@@ -101,6 +102,7 @@ public class HomeFragment extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
             if (listMovies.size() != 0) {
                 rv_main.setVisibility(View.VISIBLE);
                 pb_main.setVisibility(View.GONE);
@@ -109,4 +111,5 @@ public class HomeFragment extends Fragment {
         }
 
     }
+
 }

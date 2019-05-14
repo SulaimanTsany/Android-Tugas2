@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_home"
         android:checked="true"
         android:title="@string/home"
         android:icon="@drawable/ic_pets_black_24dp"/>
+    <item
+        android:id="@+id/menu_upcoming"
+        android:checked="true"
+        android:title="@string/upcoming"
+        android:icon="@drawable/ic_upcoming_24dp"/>
+    <item
+        android:id="@+id/menu_popular"
+        android:checked="true"
+        android:title="@string/popular"
+        android:icon="@drawable/ic_popular_24dp"/>
     <item
         android:id="@+id/menu_favorite"
         android:title="@string/favorite"
@@ -12,6 +23,7 @@
     <item
         android:id="@+id/menu_other"
         android:title="@string/other"
-        android:icon="@drawable/ic_blur_on_black_24dp"/>
+        android:icon="@drawable/ic_blur_on_black_24dp"
+        app:showAsAction="ifRoom"/>
 
 </menu>

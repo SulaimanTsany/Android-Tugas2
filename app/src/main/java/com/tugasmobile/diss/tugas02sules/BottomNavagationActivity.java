@@ -13,9 +13,13 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import io.realm.Realm;
+import io.realm.exceptions.RealmMigrationNeededException;
+
 public class BottomNavagationActivity extends AppCompatActivity {
 
     private Fragment fragment;
+    private Realm realm;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,6 +55,14 @@ public class BottomNavagationActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     loadFragment(fragment);
                     return true;
+                case R.id.menu_popular:
+                    fragment = new PopularFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.menu_upcoming:
+                    fragment = new UpcomingFragment();
+                    loadFragment(fragment);
+                    return true;
                 case R.id.menu_favorite:
                     fragment = new FavoriteFragment();
                     loadFragment(fragment);
@@ -68,6 +80,14 @@ public class BottomNavagationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_navagation);
+        Realm.init(this);
+
+        try {
+            realm = Realm.getDefaultInstance();
+        } catch (RealmMigrationNeededException r) {
+            Realm.deleteRealm(realm.getDefaultConfiguration());
+            realm = Realm.getDefaultInstance();
+        }
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_nav_main);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

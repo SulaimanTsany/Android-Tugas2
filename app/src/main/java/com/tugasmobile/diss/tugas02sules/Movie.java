@@ -6,18 +6,27 @@ import android.os.Parcelable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Movie implements Parcelable {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
+public class Movie extends RealmObject implements Parcelable {
+    @Required
+    @PrimaryKey
     private String id;
+    @Required
     private String title;
     private String overview;
+    @Required
     private String poster_path;
     private String release_date;
+    @Required
     private String backdrop_path;
     private String poster;
     private String backdrop;
     private float vote_average;
     private int vote_count;
+    private boolean favorited;
 
     public Movie () {}
 
@@ -167,5 +176,13 @@ public class Movie implements Parcelable {
 
     public void setBackdrop(String backdrop) {
         this.backdrop = backdrop;
+    }
+
+    public boolean isFavorited() {
+        return favorited;
+    }
+
+    public void setFavorited(boolean favorited) {
+        this.favorited = favorited;
     }
 }
