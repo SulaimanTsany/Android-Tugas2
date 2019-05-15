@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tugasmobile.diss.tugas02sules">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +11,10 @@
         android:roundIcon="@mipmap/ic_pets_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".DetailMovieActivity"
-            android:theme="@style/AppTheme.NoActionBarSule"/>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".DetailMovieActivity"
+            android:theme="@style/AppTheme.NoActionBarSule" />
         <activity
             android:name=".BottomNavagationActivity"
             android:label="@string/title_activity_bottom_navagation">
@@ -25,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

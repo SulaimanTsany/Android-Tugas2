@@ -99,4 +99,10 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.View
             rbStar = itemView.findViewById(R.id.rb_item_star);
         }
     }
+
+    public void updateList(ArrayList newList) {
+        listMovie = new ArrayList<>();
+        listMovie.addAll(newList);
+        notifyDataSetChanged();
+    }
 }
